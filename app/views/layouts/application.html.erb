@@ -12,7 +12,45 @@
   </head>
 
   <body>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#"><%= image_tag("mini-logo-small-main.png", size:"86x60") %></a></h1>
+        </li>
+         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
 
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+        </ul>
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li class="has-dropdown">
+            <a href="#"><strong>MODELS</strong></a>
+              <div id="dropdown-models" class="dropdown">
+              </div>
+          </li>
+          <li class="has-dropdown">
+            <a href="#"><strong>WHY MINI</strong></a>
+              <div id="dropdown-why-mini" class="dropdown">
+              </div>
+          </li>
+          <li class="has-dropdown">
+            <a href="#"><strong>SHOPPING TOOLS</strong></a>
+              <div id="dropdown-shopping-tools" class="dropdown">
+              </div>
+          </li>
+          <li class="has-dropdown">
+            <a href="#"><strong>OWNERS</strong></a>
+              <div id="dropdown-owners" class="dropdown">
+              </div>
+          </li>
+        </ul>
+      </section>
+    </nav>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
