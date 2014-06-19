@@ -1,11 +1,9 @@
-<div class="index-heading large-12 columns" >
-	<h1>Pick Your Model</h1> 
-</div>
+<% content_for :title, "MINI - Choose Your Model" %>
 
-<div class="car-panel-1 large-6 columns">
-	<h1><a href="cars/new?car=car1">Car 1</a><h2>
+<div id="model-choice">
+	<%= image_tag("model-choice.png", usemap:"#modelmap", id:"model-choice-img") %>
+	<map name="modelmap">
+		<area href="/cars/new/?model=coupe" shape="rect" coords="332,21,641,277" style="outline:none;" target="_self" onMouseOver="if(document.images) document.getElementById('model-choice-img').src= '<%= asset_path 'model-choice-coupe-highlight.png' %>';" onmouseout="if(document.images) document.getElementById('model-choice-img').src= '<%= asset_path 'model-choice.png' %>';"/>
+		<area href="/cars/new/?model=clubman" shape="rect" coords="329,345,638,601" style="outline:none;" target="_self" onMouseOver="if(document.images) document.getElementById('model-choice-img').src= '<%= asset_path 'model-choice-clubman-highlight.png' %>';" onmouseout="if(document.images) document.getElementById('model-choice-img').src= '<%= asset_path 'model-choice.png' %>';"/>
+	</map>
 </div>
-<div class="car-panel-2 large-6 columns">
-	<h1><a href="cars/new?car=car2">Car 2</a><h2>
-</div>
-

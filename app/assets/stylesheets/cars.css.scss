@@ -2,25 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.index-heading {
-	text-align: center;
-	background-color: blue;
-	height: 200px;
-	padding-top: 100px;
-}
-
-.car-panel-1 {
-	background-color: red;
-	height: 550px;
-	text-align: center;
-	padding-top:200px;
-}
-
-.car-panel-2 {
-	background-color: green;
-	height: 550px;
-	text-align: center;
-	padding-top:200px;
+#model-choice {
+	background-color: black;
+	height: 100%;
+	img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 #dropdown-models {
@@ -28,6 +17,7 @@
 	height: 465px;
 	width: 925px;
 	background-image:url("dropdown-models.png");
+	border: 4px solid gray;
 }
 
 #dropdown-why-mini {
@@ -35,6 +25,7 @@
 	height: 477px;
 	width: 571px;
 	background-image:url("dropdown-why-mini.png");
+	border: 4px solid gray;
 }
 
 #dropdown-shopping-tools {
@@ -42,6 +33,7 @@
 	height: 380px;
 	width: 837px;
 	background-image:url("dropdown-shopping-tools.png");
+	border: 4px solid gray;
 }
 
 #dropdown-owners {
@@ -49,8 +41,5 @@
 	height: 397px;
 	width: 839px;
 	background-image:url("dropdown-owners.png");
-}
-
-#top-bar-1 {
-	padding-left: 20%;
+	border: 4px solid gray;
 }
