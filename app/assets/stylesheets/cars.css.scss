@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+	background-color: black;
+	width: 100%;
+}
+
+.customizer-container {
+	height: 100%;
+	background-color: red;
+	margin: 0 auto;
+}
+
+.customizer-left {
+	height: 100%;
+	background-color: blue;
+}
+
+.customizer-right {
+	height: 100%;
+	background-color: green;
+}
+
 #model-choice {
 	background-color: black;
 	height: 100%;
