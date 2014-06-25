@@ -1,6 +1,6 @@
 var carApp = angular.module('carApp', []);
 
-carApp.controller('OptionsListCtrl', function ($scope) {
+carApp.controller('OptionsListCtrl',['$scope', function($scope) {
   $scope.total = 0.0;
 
   $scope.options = [
@@ -54,4 +54,4 @@ carApp.controller('OptionsListCtrl', function ($scope) {
     });
   };
 
-});
+}]);
