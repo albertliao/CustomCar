@@ -1,6 +1,6 @@
 <% content_for :title, "MINI - Configure your car" %>
 
-<div class="customizer-container large-9">
+<div ng-app="carApp" ng-controller="OptionsListCtrl" ng-init="init()" class="customizer-container large-9">
 
 		<div class="customizer-left large-9 columns">
       <div class="viewport">
@@ -42,13 +42,13 @@
       <ul class="tabs" data-tab>
         <li class="tab-title active"><a href="#panel-colors">Colors</a></li>
         <li class="tab-title"><a href="#panel-wheels">Wheels</a></li>
-        <li class="tab-title"><a href="#panel-options">Options</a></li>
+        <li class="tab-title"><a href="#panel-equipment">Equipment</a></li>
       </ul>
       <div class="tabs-content">
         <div class="content active" id="panel-colors">
-          <div data-tooltip title="Blazing Red" class="has-tip tip-top color-red color-choice color-selected"></div>
-          <div data-tooltip title="Pepper White" class="has-tip tip-top color-white color-choice"></div>
-          <div data-tooltip title="Deep Blue" class="has-tip tip-top color-blue color-choice"></div>
+          <div ng-click="addOption(<%=@red%>)" data-tooltip title="Blazing Red" class="has-tip tip-top color-red color-choice color-selected"></div>
+          <div ng-click="addOption(<%=@white%>)" data-tooltip title="Pepper White" class="has-tip tip-top color-white color-choice"></div>
+          <div ng-click="addOption(<%=@blue%>)" data-tooltip title="Deep Blue" class="has-tip tip-top color-blue color-choice"></div>
           <form>
             <input class="color-radio" id="red-radio" name="color-radio" value="red" type="radio" checked />
             <input class="color-radio" id="white-radio" name="color-radio" value="white" type="radio"  />
@@ -58,17 +58,17 @@
         <div class="content" id="panel-wheels">
           <h1>Wheels</h1>
           <form>
-            <input class="wheel-radio" id="wheel1" name="wheel-radio" value="wheel1" type="radio" checked />Wheel1
-            <input class="wheel-radio" id="wheel2" name="wheel-radio" value="wheel2" type="radio"  />Wheel2
-            <input class="wheel-radio" id="wheel3" name="wheel-radio" value="wheel3" type="radio"  />Wheel3
+            <input ng-click="addOption(<%=@wheel1%>)" class="wheel-radio" id="wheel1" name="wheel-radio" value="wheel1" type="radio" checked />Silver Heli Spoke
+            <input ng-click="addOption(<%=@wheel2%>)" class="wheel-radio" id="wheel2" name="wheel-radio" value="wheel2" type="radio"  />Silver Loop Spoke
+            <input ng-click="addOption(<%=@wheel3%>)" class="wheel-radio" id="wheel3" name="wheel-radio" value="wheel3" type="radio"  />Silver Victory Spoke
           </form>
         </div>
-        <div class="content" id="panel-options">
-          <h1>Options</h1>
+        <div class="content" id="panel-equipment">
+          <h1>Equipment</h1>
           <form>
-            <input class="options" name="options" value="option1" type="checkbox" checked />Option1
-            <input class="options" name="options" value="option2" type="checkbox"  />Option2
-            <input class="options" name="options" value="option3" type="checkbox"  />Option3
+            <input ng-click="toggleEquipment(<%=@equip1%>)" class="equipment" name="equipment" value="equipment1" type="checkbox" checked />Six Speed Automatic
+            <input ng-click="toggleEquipment(<%=@equip2%>)" class="equipment" name="equipment" value="equipment2" type="checkbox"  />Chrome Line Exterior
+            <input ng-click="toggleEquipment(<%=@equip3%>)" class="equipment" name="equipment" value="equipment3" type="checkbox"  />Sports Suspension
           </form>
         </div>
       </div>
@@ -77,7 +77,13 @@
 
 		<div class="customizer-right large-3 columns">
 			<div>
-				CUSTOM RIGHT
+				<h1>Options</h1>
+        <ul>
+          <li ng-repeat="option in options track by $index">
+            {{option.name}} -- {{option.price}}
+          </li>
+        </ul>
+        <h3>Total MSRP: {{total | number:2}}</h3>
 			</div>
 		</div> <!-- customizer-right -->
 
