@@ -748,7 +748,7 @@
 
 // We use these to control the timer styles
 // $orbit-timer-bg: rgba(255,255,255,0.3);
-// $orbit-timer-show-progress-bar: true;
+$orbit-timer-show-progress-bar: false;
 
 // We use these to control the bullet nav styles
 // $orbit-bullet-nav-color: #ccc;
@@ -1113,8 +1113,8 @@
 // $include-html-tabs-classes: $include-html-classes;
 
 // $tabs-navigation-padding: rem-calc(16);
-// $tabs-navigation-bg-color: #efefef  ;
-// $tabs-navigation-active-bg-color: #fff;
+$tabs-navigation-bg-color: #414141;
+$tabs-navigation-active-bg-color: #c61a16;
 // $tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: -6%);
 // $tabs-navigation-font-color: #222;
 // $tabs-navigation-active-font-color: $tabs-navigation-font-color;
@@ -1149,10 +1149,10 @@
 
 // $include-html-tooltip-classes: $include-html-classes;
 
-// $has-tip-border-bottom: dotted 1px #ccc;
+$has-tip-border-bottom: 0px;
 // $has-tip-font-weight: $font-weight-bold;
 // $has-tip-font-color: #333;
-// $has-tip-border-bottom-hover: dotted 1px scale-color($primary-color, $lightness: -55%);
+$has-tip-border-bottom-hover: 0px;
 // $has-tip-font-color-hover: $primary-color;
 // $has-tip-cursor-type: help;
 

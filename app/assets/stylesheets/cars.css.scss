@@ -7,6 +7,20 @@ body {
 	width: 100%;
 }
 
+.viewport {
+	position: relative;
+	height: 70%;
+}
+
+.view-buttons {
+	position: absolute;
+	z-index: 1;
+}
+
+.slideshow-wrapper {
+	position: absolute;
+}
+
 .customizer-container {
 	height: 100%;
 	background-color: red;
@@ -15,7 +29,7 @@ body {
 
 .customizer-left {
 	height: 100%;
-	background-color: blue;
+	background-color: gray;
 }
 
 .customizer-right {
@@ -63,4 +77,51 @@ body {
 	width: 839px;
 	background-image:url("dropdown-owners.png");
 	border: 4px solid gray;
+}
+
+.tabs-content {
+	background-color: black;
+	height: 20%;
+	overflow: auto;
+}
+
+#panel-colors {
+}
+
+#panel-wheels {
+}
+
+#panel-options {
+}
+
+.color-choice {
+	height: 100px;
+	width: 100px;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.color-red {
+	background-image: image-url("red-color-med.png");
+}
+
+.color-selected {
+	border: 3px solid yellow;
+}
+
+.color-selected:hover {
+	border: 3px solid yellow;
+}
+
+.color-white {
+	background-image: image-url("white-color-med.png");
+}
+
+.color-blue {
+	background-image: image-url("blue-color-med.png");
+}
+
+.color-radio {
+	/*display: none;*/
 }
