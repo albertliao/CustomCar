@@ -14,6 +14,12 @@ class CarsController < ApplicationController
   	@equip1 = {'category'=>'equipment','name'=>'Six-Speed Automatic', 'price'=>1250.00}.to_json
   	@equip2 = {'category'=>'equipment','name'=>'Chrome Line Exterior', 'price'=>150.00}.to_json
   	@equip3 = {'category'=>'equipment','name'=>'Sports Suspension', 'price'=>300.00}.to_json
+
+  	@colors = [
+  			{'name' => 'Blazing Red', 'price' => 500.00, 'category' => 'color', 'model' => 'coupe', 'icon' => '/assets/red-color-med.png', 'viewFront' => '/assets/color-red-front.png', 'viewStripe' => '/assets/stripe-red-front.png'},
+  			{'name' => 'Pepper White', 'price' => 250.00, 'category' => 'color', 'model' => 'coupe', 'icon' => '/assets/white-color-med.png', 'viewFront' => '/assets/color-white-front.png', 'viewStripe' => '/assets/stripe-white-front.png'},
+  			{'name' => 'Deep Blue', 'price' => 300.00, 'category' => 'color', 'model' => 'coupe', 'icon' => '/assets/blue-color-med.png', 'viewFront' => '/assets/color-blue-front.png', 'viewStripe' => '/assets/stripe-blue-front.png'}
+  	]
   end
 
   def summary

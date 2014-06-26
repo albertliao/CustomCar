@@ -1,9 +1,9 @@
 <% content_for :title, "MINI - Configure your car" %>
 
-<div ng-app="carApp" ng-controller="OptionsListCtrl" ng-init="init()" class="customizer-container large-9">
+<div ng-app="carApp" ng-controller="OptionsListCtrl" ng-init="init(<%=@colors.to_json%>)" class="customizer-container large-9">
 
 		<div class="customizer-left large-9 columns">
-      <div class="viewport">
+      <div class="viewport" ng-style="viewportBackground()">
         <div class="view-buttons">
           <a href="#" onclick="buttonFront()" class="button tiny">Front</a>
           <a href="#" onclick="buttonBack()" class="button tiny">Back</a>
@@ -18,25 +18,24 @@
       </ul>
       <div class="tabs-content">
         <div class="content active" id="panel-colors">
-          <div back-img="/assets/red-color-med.png" ng-click="addOption(<%=@red%>)" data-tooltip title="Blazing Red" class="has-tip tip-top color-choice color-selected"></div>
-          <div ng-click="addOption(<%=@white%>)" data-tooltip title="Pepper White" class="has-tip tip-top color-white color-choice"></div>
-          <div ng-click="addOption(<%=@blue%>)" data-tooltip title="Deep Blue" class="has-tip tip-top color-blue color-choice"></div>
-        </div>
+          <div ng-repeat="color in colors" back-img="{{color.icon}}" ng-click="pickColor($index,color)" data-tooltip title="{{color.name}}" class="has-tip tip-top color-choice" ng-class="{'color-selected' : $index == colorSelected}">          
+          </div>
+        </div>    
         <div class="content" id="panel-wheels">
           <h1>Wheels</h1>
-          <form>
+<!--           <form>
             <input ng-click="addOption(<%=@wheel1%>)" class="wheel-radio" id="wheel1" name="wheel-radio" value="wheel1" type="radio" checked />Silver Heli Spoke
             <input ng-click="addOption(<%=@wheel2%>)" class="wheel-radio" id="wheel2" name="wheel-radio" value="wheel2" type="radio"  />Silver Loop Spoke
             <input ng-click="addOption(<%=@wheel3%>)" class="wheel-radio" id="wheel3" name="wheel-radio" value="wheel3" type="radio"  />Silver Victory Spoke
-          </form>
+          </form> -->
         </div>
         <div class="content" id="panel-equipment">
           <h1>Equipment</h1>
-          <form>
+<!--           <form>
             <input ng-click="toggleEquipment(<%=@equip1%>)" class="equipment" name="equipment" value="equipment1" type="checkbox" checked />Six Speed Automatic
             <input ng-click="toggleEquipment(<%=@equip2%>)" class="equipment" name="equipment" value="equipment2" type="checkbox"  />Chrome Line Exterior
             <input ng-click="toggleEquipment(<%=@equip3%>)" class="equipment" name="equipment" value="equipment3" type="checkbox"  />Sports Suspension
-          </form>
+          </form> -->
         </div>
       </div>
 
