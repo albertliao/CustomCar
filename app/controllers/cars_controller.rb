@@ -3,9 +3,45 @@ class CarsController < ApplicationController
   end
 
   def new
-  	@equip1 = {'category'=>'equipment','name'=>'Six-Speed Automatic', 'price'=>1250.00}.to_json
-  	@equip2 = {'category'=>'equipment','name'=>'Chrome Line Exterior', 'price'=>150.00}.to_json
-  	@equip3 = {'category'=>'equipment','name'=>'Sports Suspension', 'price'=>300.00}.to_json
+
+  	@equips = [
+  		  	{
+  			 'name' => '6-Speed Automatic', 
+  			 'desc' => 'This Aisin 6-speed can change gears automatically or let you control the shift points using the Sport mode. Prepare to experience maximum control and motoring exhilaration.',
+  			 'price' => 1250.00, 
+  			 'category' => 'equipment', 
+  			 'model' => 'coupe', 
+  			 'icon' => '/assets/equip-automatic-shifter-icon.png', 
+  			 'viewInt' => '/assets/equip-automatic-shifter.png', 
+  			},
+  		  	{
+  			 'name' => 'Alarm System', 
+  			 'desc' => "Ultrasonic motion sensors register any unauthorized attempts to open the doors, bonnet, tailgate or windows. This system even has its own power supply, helping ensure it still works even if your MINI's battery has been removed.",
+  			 'price' => 500.00, 
+  			 'category' => 'equipment', 
+  			 'model' => 'coupe', 
+  			 'icon' => '/assets/equip-alarm-icon.png', 
+  			 'viewInt' => '', 
+  			},
+  		  	{
+  			 'name' => 'Rear Park Distance Control', 
+  			 'desc' => "Using ultrasonic sensors to detect if there are any bumper-height obstacles behind your MINI, the rear Park Distance Control system adds an extra measure of security whenever you're backing up.",
+  			 'price' => 500.00, 
+  			 'category' => 'equipment', 
+  			 'model' => 'coupe', 
+  			 'icon' => '/assets/equip-rear-park-icon.png', 
+  			 'viewInt' => '', 
+  			},
+  		  	{
+  			 'name' => 'Map Light', 
+  			 'desc' => "Sure, you could use it to read maps, but who needs maps? We use it to make sure our navigator isn't cheating us at blackjack. This easy-on-the-eyes halogen lamp adjusts easily to shine in any desired direction.",
+  			 'price' => 26.00, 
+  			 'category' => 'equipment', 
+  			 'model' => 'coupe', 
+  			 'icon' => '/assets/equip-map-light-icon.png', 
+  			 'viewInt' => '/assets/equip-map-light.png', 
+  			}
+  	]
 
   	@interiors = [
   		  	{

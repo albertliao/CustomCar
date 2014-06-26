@@ -1,6 +1,6 @@
 <% content_for :title, "MINI - Configure your car" %>
 
-<div ng-app="carApp" ng-controller="OptionsListCtrl" ng-init="init(<%=@colors.to_json%>,<%=@wheels.to_json%>,<%=@interiors.to_json%>)" class="customizer-container large-9 fade" ng-class="{in:true}" >
+<div ng-app="carApp" ng-controller="OptionsListCtrl" ng-init="init(<%=@colors.to_json%>,<%=@wheels.to_json%>,<%=@interiors.to_json%>,<%=@equips.to_json%>)" class="customizer-container large-9 fade" ng-class="{in:true}" >
 
 		<div class="customizer-left large-9 columns">
       <div class="viewport" ng-style="viewportBackground()">
@@ -31,7 +31,8 @@
           </div>
         </div>
         <div class="content" id="panel-equipment">
-          <h1>Equipment</h1>
+          <div ng-repeat="equip in equips" back-img="{{equip.icon}}" ng-click="toggleEquipment(equip)" data-tooltip title="<strong>{{equip.name}}</strong> <p>{{equip.desc}}</p>" class="has-tip tip-top choice" ng-class="{'selected' : hasEquipment(equip)}">            
+          </div>
 <!--           <form>
             <input ng-click="toggleEquipment(<%=@equip1%>)" class="equipment" name="equipment" value="equipment1" type="checkbox" checked />Six Speed Automatic
             <input ng-click="toggleEquipment(<%=@equip2%>)" class="equipment" name="equipment" value="equipment2" type="checkbox"  />Chrome Line Exterior

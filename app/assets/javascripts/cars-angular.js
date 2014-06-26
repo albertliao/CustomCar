@@ -5,25 +5,26 @@ carApp.controller('OptionsListCtrl',['$scope', function($scope) {
   $scope.colors = [];
   $scope.wheels = [];
   $scope.interiors = [];
+  $scope.equips = [];
   $scope.colorSelected = 0;
   $scope.wheelSelected = 0;
   $scope.interiorSelected = 0;
   $scope.viewPortSelected = "front";
-  $scope.fadein = false;
+  $scope.options = [];
 
-  $scope.options = [
-    {'category':'base','name': 'Coupe Base Price', 'price': 22000.00},
-    {'category':'fee','name': 'Destination Fee', 'price': 850.00},
-    {'category':'wheel','name': 'Silver Heli Spoke', 'price': 0.00},
-    {'category':'option','name': 'Six-Speed Automatic', 'price': 1250.00},  
-    {'category':'color','name': 'Blazing Red', 'price': 200.00}   
-  ];
-
-  $scope.init = function(colors,wheels,interiors) {
-    $scope.updateTotal();
+  $scope.init = function(colors,wheels,interiors,equips) {
     $scope.colors = colors;
     $scope.wheels = wheels;
     $scope.interiors = interiors;
+    $scope.equips = equips;
+    $scope.options = [
+      {'category':'base','name': 'Coupe Base Price', 'price': 22000.00},
+      {'category':'fee','name': 'Destination Fee', 'price': 850.00},
+      $scope.colors[$scope.colorSelected],
+      $scope.wheels[$scope.wheelSelected],
+      $scope.interiors[$scope.interiorSelected]   
+    ];
+    $scope.updateTotal();
   };
 
   $scope.toFrontView = function() {
@@ -121,13 +122,17 @@ carApp.controller('OptionsListCtrl',['$scope', function($scope) {
   };
 
   $scope.toggleEquipment = function(option) {
-    if (($scope.options.count(function(n) { return n['name'] == option['name']; }) > 0))
+    if ($scope.options.count(function(n) { return n['name'] == option['name']; }) > 0)
       $scope.removeOption(option);
     else
-      $scope.addOption(option);
+      $scope.options.push(option);
 
     $scope.updateTotal();
   };
+
+  $scope.hasEquipment = function(option) {
+      return ($scope.options.count(function(n) { return n['name'] == option['name']; }) > 0);
+  }
 
   $scope.removeOption = function(option) {
     $scope.options.remove(function(n) {
@@ -145,28 +150,5 @@ carApp.directive('backImg', function(){
                 'background-size' : 'cover'
             });
         });
-    };
-});
-
-carApp.directive("myStyle", function (){
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs)
-        {
-            var el   = element[0],
-                attr = el.getAttribute('style');
-
-            el.setAttribute('style', attr);
-
-            // We need to watch for changes in the style in case required data is not yet ready when compiling
-            attrs.$observe('style', function (){
-                attr = el.getAttribute('style');
-
-                if(attr)
-                {
-                    el.setAttribute('style', attr);
-                }
-            });
-        }
     };
 });
