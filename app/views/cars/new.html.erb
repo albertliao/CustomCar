@@ -1,33 +1,34 @@
 <% content_for :title, "MINI - Configure your car" %>
 
-<div ng-app="carApp" ng-controller="OptionsListCtrl" ng-init="init(<%=@colors.to_json%>)" class="customizer-container large-9">
+<div ng-app="carApp" ng-controller="OptionsListCtrl" ng-init="init(<%=@colors.to_json%>,<%=@wheels.to_json%>,<%=@interiors.to_json%>)" class="customizer-container large-9 fade" ng-class="{in:true}" >
 
 		<div class="customizer-left large-9 columns">
       <div class="viewport" ng-style="viewportBackground()">
         <div class="view-buttons">
-          <a href="#" onclick="buttonFront()" class="button tiny">Front</a>
-          <a href="#" onclick="buttonBack()" class="button tiny">Back</a>
-          <a href="#" onclick="buttonInt()" class="button tiny">Interior</a>
+          <a href="#" ng-click="viewPortSelected='front';" class="button tiny radius">Front</a>
+          <a href="#" ng-click="viewPortSelected='rear';"  class="button tiny radius">Rear</a>
+          <a href="#" ng-click="viewPortSelected='interior';"  class="button tiny radius">Interior</a>
         </div>
       </div> <!-- viewport -->
       <br />
       <ul class="tabs" data-tab>
-        <li class="tab-title active"><a href="#panel-colors">Colors</a></li>
-        <li class="tab-title"><a href="#panel-wheels">Wheels</a></li>
+        <li ng-click="toFrontView()" class="tab-title active"><a href="#panel-colors">Colors</a></li>
+        <li ng-click="toFrontView()" class="tab-title"><a href="#panel-wheels">Wheels</a></li>
+        <li ng-click="viewPortSelected='interior';" class="tab-title"><a href="#panel-interior">Interior</a></li>
         <li class="tab-title"><a href="#panel-equipment">Equipment</a></li>
       </ul>
       <div class="tabs-content">
         <div class="content active" id="panel-colors">
-          <div ng-repeat="color in colors" back-img="{{color.icon}}" ng-click="pickColor($index,color)" data-tooltip title="{{color.name}}" class="has-tip tip-top color-choice" ng-class="{'color-selected' : $index == colorSelected}">          
+          <div ng-repeat="color in colors" back-img="{{color.icon}}" ng-click="pickColor($index,color)" data-tooltip title="<strong>{{color.name}}</strong> <p>{{color.desc}}</p>" class="has-tip tip-top choice" ng-class="{'selected' : $index == colorSelected}">          
           </div>
         </div>    
         <div class="content" id="panel-wheels">
-          <h1>Wheels</h1>
-<!--           <form>
-            <input ng-click="addOption(<%=@wheel1%>)" class="wheel-radio" id="wheel1" name="wheel-radio" value="wheel1" type="radio" checked />Silver Heli Spoke
-            <input ng-click="addOption(<%=@wheel2%>)" class="wheel-radio" id="wheel2" name="wheel-radio" value="wheel2" type="radio"  />Silver Loop Spoke
-            <input ng-click="addOption(<%=@wheel3%>)" class="wheel-radio" id="wheel3" name="wheel-radio" value="wheel3" type="radio"  />Silver Victory Spoke
-          </form> -->
+          <div ng-repeat="wheel in wheels" back-img="{{wheel.icon}}" ng-click="pickWheel($index,wheel)" data-tooltip title="<strong>{{wheel.name}}</strong> <p>{{wheel.desc}}</p>" class="has-tip tip-top choice" ng-class="{'selected' : $index == wheelSelected}">          
+          </div>
+        </div>  
+        <div class="content" id="panel-interior">
+          <div ng-repeat="interior in interiors" back-img="{{interior.icon}}" ng-click="pickInterior($index,interior)" data-tooltip title="<strong>{{interior.name}}</strong> <p>{{interior.desc}}</p>" class="has-tip tip-top choice" ng-class="{'selected' : $index == interiorSelected}">          
+          </div>
         </div>
         <div class="content" id="panel-equipment">
           <h1>Equipment</h1>
@@ -38,7 +39,6 @@
           </form> -->
         </div>
       </div>
-
 		</div> <!-- customizer-left -->
 
 		<div class="customizer-right large-3 columns">
@@ -54,55 +54,3 @@
 		</div> <!-- customizer-right -->
 
 </div>
-
-<script>
-
-// function buildViewportFrontal(model,color,wheel) {
-//   //need to build the background css
-//   var css = "";
-//   css = css + 
-// }
-
-function buttonFront() {
-  console.log("button1");
-  $('.orbit-img-front').addClass("active"); 
-  $('.orbit-img-back').removeClass("active"); 
-  $('.orbit-img-interior').removeClass("active"); 
-}
-
-function buttonBack() {
-  console.log("button2");
-  $('.orbit-img-front').removeClass("active"); 
-  $('.orbit-img-back').addClass("active"); 
-  $('.orbit-img-interior').removeClass("active"); 
-}
-
-function buttonInt() {
-  console.log("button3");
-  $('.orbit-img-front').removeClass("active"); 
-  $('.orbit-img-back').removeClass("active"); 
-  $('.orbit-img-interior').addClass("active"); 
-}
-
-$('.color-red').click(function() {
-  $('.color-red').addClass("color-selected");
-  // $('#red-radio').prop("checked", true);
-  $('.color-blue').removeClass("color-selected");
-  $('.color-white').removeClass("color-selected");
-});
-
-$('.color-white').click(function() {
-  $('.color-red').removeClass("color-selected");
-  // $('#white-radio').prop("checked", true);
-  $('.color-blue').removeClass("color-selected");
-  $('.color-white').addClass("color-selected");
-});
-
-$('.color-blue').click(function() {
-  $('.color-red').removeClass("color-selected");
-  // $('#blue-radio').prop("checked", true);
-  $('.color-blue').addClass("color-selected");
-  $('.color-white').removeClass("color-selected");
-});
-
-</script>

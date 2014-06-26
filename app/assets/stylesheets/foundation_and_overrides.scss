@@ -56,7 +56,7 @@
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: gray;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -1112,11 +1112,11 @@ $orbit-timer-show-progress-bar: false;
 
 // $include-html-tabs-classes: $include-html-classes;
 
-// $tabs-navigation-padding: rem-calc(16);
+$tabs-navigation-padding: rem-calc(18);
 $tabs-navigation-bg-color: #414141;
 $tabs-navigation-active-bg-color: #c61a16;
-// $tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: -6%);
-// $tabs-navigation-font-color: #222;
+$tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: -10%);
+$tabs-navigation-font-color: white;
 // $tabs-navigation-active-font-color: $tabs-navigation-font-color;
 // $tabs-navigation-font-size: rem-calc(16);
 // $tabs-navigation-font-family: $body-font-family;

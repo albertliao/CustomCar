@@ -3,88 +3,88 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-	background-color: black;
-	width: 100%;
+  background-color: black;
+  width: 100%;
 }
 
 .viewport {
-	position: relative;
-	height: 70%;
-	border: 6px solid red;
+  position: relative;
+  height: 70%;
+  border: 6px solid;
 }
 
 .view-buttons {
-	position: absolute;
-	z-index: 10;
+  position: absolute;
+  z-index: 10;
 }
 
 .slideshow-wrapper {
-	position: absolute;
+  position: absolute;
 }
 
 .customizer-container {
-	height: 100%;
-	background-color: gray;
-	margin: 0 auto;
+  height: 100%;
+  background-color: gray;
+  margin: 0 auto;
 }
 
 .customizer-left {
-	height: 100%;
-	background-color: black;
+  height: 100%;
+  background-color: black;
 }
 
 .customizer-right {
-	height: 100%;
-	background-color: black;
-	color: white;
+  height: 100%;
+  background-color: black;
+  color: white;
 }
 
 #model-choice {
-	background-color: black;
-	height: 100%;
-	img {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-	}
+  background-color: black;
+  height: 100%;
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 #dropdown-models {
-	background-color: black;
-	height: 465px;
-	width: 925px;
-	background-image:url("dropdown-models.png");
-	border: 4px solid gray;
+  background-color: black;
+  height: 465px;
+  width: 925px;
+  background-image:url("dropdown-models.png");
+  border: 4px solid gray;
 }
 
 #dropdown-why-mini {
-	background-color: black;
-	height: 477px;
-	width: 571px;
-	background-image:url("dropdown-why-mini.png");
-	border: 4px solid gray;
+  background-color: black;
+  height: 477px;
+  width: 571px;
+  background-image:url("dropdown-why-mini.png");
+  border: 4px solid gray;
 }
 
 #dropdown-shopping-tools {
-	background-color: black;
-	height: 380px;
-	width: 837px;
-	background-image:url("dropdown-shopping-tools.png");
-	border: 4px solid gray;
+  background-color: black;
+  height: 380px;
+  width: 837px;
+  background-image:url("dropdown-shopping-tools.png");
+  border: 4px solid gray;
 }
 
 #dropdown-owners {
-	background-color: black;
-	height: 397px;
-	width: 839px;
-	background-image:url("dropdown-owners.png");
-	border: 4px solid gray;
+  background-color: black;
+  height: 397px;
+  width: 839px;
+  background-image:url("dropdown-owners.png");
+  border: 4px solid gray;
 }
 
 .tabs-content {
-	background-color: black;
-	height: 20%;
-	overflow: auto;
+  background-color: black;
+  height: 20%;
+  overflow: auto;
 }
 
 #panel-colors {
@@ -96,54 +96,30 @@ body {
 #panel-equipment {
 }
 
-.color-choice {
-	height: 100px;
-	width: 100px;
-	display: inline-block;
-	margin-left: 10px;
-	margin-right: 10px;
+.choice {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.color-red {
-	background-image: image-url("red-color-med.png");
+.selected {
+  border: 3px solid yellow;
 }
 
-.color-selected {
-	border: 3px solid yellow;
+.selected:hover {
+  border: 3px solid yellow;
 }
 
-.color-selected:hover {
-	border: 3px solid yellow;
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 1.25s ease-in;
+  -moz-transition: opacity 1.25s ease-in;
+  -o-transition: opacity 1.25s ease-in;
+  -ms-transition: opacity 1.25s ease-in;
+  transition: opacity 1.25s ease-in;
 }
-
-.color-white {
-	background-image: image-url("white-color-med.png");
-}
-
-.color-blue {
-	background-image: image-url("blue-color-med.png");
-}
-
-.color-radio {
-	/*display: none;*/
-}
-
-.viewport-background {
-	position: absolute;
-	width:100%;
-	height:100%
-}
-
-.car-stacking {
-	position: absolute;
-	max-width:100%;
-	height: 100%
-}
-
-.index-1 {
-	z-index: 1;
-}
-
-.index-2 {
-	z-index: 2;
+.fade.in{
+  opacity: 1;
 }

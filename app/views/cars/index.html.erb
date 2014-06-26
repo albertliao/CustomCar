@@ -1,6 +1,6 @@
 <% content_for :title, "MINI - Choose Your Model" %>
 
-<div id="model-choice">
+<div ng-app="carApp" ng-controller="OptionsListCtrl" id="model-choice" class="fade" ng-class="{in:true}">
 	<%= image_tag("model-choice.png", usemap:"#modelmap", id:"model-choice-img") %>
 	<map name="modelmap">
 		<area href="/cars/new/?model=coupe" shape="rect" coords="332,21,641,277" style="outline:none;" target="_self" onMouseOver="if(document.images) document.getElementById('model-choice-img').src= '<%= asset_path 'model-choice-coupe-highlight.png' %>';" onmouseout="if(document.images) document.getElementById('model-choice-img').src= '<%= asset_path 'model-choice.png' %>';"/>
