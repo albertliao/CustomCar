@@ -15,8 +15,24 @@ body {
 
 .view-buttons {
   position: absolute;
+  left:3px;
+  top:2px;
   z-index: 10;
 }
+
+.view-buttons a {
+  opacity: 0.8;
+}
+
+.button-active {
+  border: none;
+  background-color: red;
+}
+
+.button-active:hover {
+  background-color: darken(red,10%);
+}
+
 
 .slideshow-wrapper {
   position: absolute;
@@ -37,6 +53,15 @@ body {
   height: 100%;
   background-color: black;
   color: white;
+}
+
+.customizer-right h1 {
+  color: white;
+}
+
+.customizer-right h3 {
+  color: white;
+  text-align: right;
 }
 
 #model-choice {
@@ -87,13 +112,14 @@ body {
   overflow: auto;
 }
 
-#panel-colors {
+.tabs li a {
+  border-top: 1px solid #666666;
+  border-bottom: 1px solid #666666;
 }
 
-#panel-wheels {
-}
-
-#panel-equipment {
+.tabs li.active a {
+  border-top: none;
+  border-bottom: none;
 }
 
 .choice {
@@ -122,4 +148,34 @@ body {
 }
 .fade.in{
   opacity: 1;
+}
+
+.option-name {
+  text-align: left;
+}
+
+.price {
+  float: right;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.options-list {
+  height: 60%;
+}
+
+.options-total {
+  height: 25%;
+}
+.save-button a {
+  float: right;
+}
+
+#saveModal {
+  height: 60%;
+  text-align: center;
+  border: 10px solid gray;
+  border-radius: 20px;
 }

@@ -5,9 +5,9 @@
 		<div class="customizer-left large-9 columns">
       <div class="viewport" ng-style="viewportBackground()">
         <div class="view-buttons">
-          <a href="#" ng-click="viewPortSelected='front';" class="button tiny radius">Front</a>
-          <a href="#" ng-click="viewPortSelected='rear';"  class="button tiny radius">Rear</a>
-          <a href="#" ng-click="viewPortSelected='interior';"  class="button tiny radius">Interior</a>
+          <a href="#" ng-click="viewPortSelected='front';" class="button tiny radius" ng-class="{'button-active' : viewPortSelected=='front'}">Front</a>
+          <a href="#" ng-click="viewPortSelected='rear';"  class="button tiny radius" ng-class="{'button-active' : viewPortSelected=='rear'}">Rear</a>
+          <a href="#" ng-click="viewPortSelected='interior';"  class="button tiny radius" ng-class="{'button-active' : viewPortSelected=='interior'}">Interior</a>
         </div>
       </div> <!-- viewport -->
       <br />
@@ -33,25 +33,33 @@
         <div class="content" id="panel-equipment">
           <div ng-repeat="equip in equips" back-img="{{equip.icon}}" ng-click="toggleEquipment(equip)" data-tooltip title="<strong>{{equip.name}}</strong> <p>{{equip.desc}}</p>" class="has-tip tip-top choice" ng-class="{'selected' : hasEquipment(equip)}">            
           </div>
-<!--           <form>
-            <input ng-click="toggleEquipment(<%=@equip1%>)" class="equipment" name="equipment" value="equipment1" type="checkbox" checked />Six Speed Automatic
-            <input ng-click="toggleEquipment(<%=@equip2%>)" class="equipment" name="equipment" value="equipment2" type="checkbox"  />Chrome Line Exterior
-            <input ng-click="toggleEquipment(<%=@equip3%>)" class="equipment" name="equipment" value="equipment3" type="checkbox"  />Sports Suspension
-          </form> -->
         </div>
       </div>
 		</div> <!-- customizer-left -->
 
 		<div class="customizer-right large-3 columns">
-			<div>
-				<h1>Options</h1>
+			<div class="options-list">
+				<h1>Your Mini</h1>
+        <hr>
         <ul>
           <li ng-repeat="option in options track by $index">
-            {{option.name}} -- {{option.price}}
+            <span class="option-name">{{option.name}}</span><span class="price">{{option.price}}<span>
           </li>
         </ul>
-        <h3>Total MSRP: {{total | number:2}}</h3>
-			</div>
+      </div>
+      <div class="options-total">
+        <hr>
+        <h3>Total MSRP</h3>
+        <h3><strong>${{total | number:2}}</strong></h3>
+      </div>
+      <div class="save-button">
+        <a href="#" data-reveal-id="saveModal" class="button radius">Save Car</a>
+      </div>
+      <div id="saveModal" class="reveal-modal small" data-reveal>
+        <h1>Thanks For Watching!</h1>
+        <img src="/assets/mini-cooper-logo.jpg">
+        <a class="close-reveal-modal">&#215;</a>
+      </div>
 		</div> <!-- customizer-right -->
-
+    
 </div>

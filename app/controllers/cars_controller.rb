@@ -107,6 +107,19 @@ class CarsController < ApplicationController
   	]
 
   	@colors = [
+   			{
+  			 'name' => 'Lightning Blue',
+  			 'desc' => "METALLIC PAINT - Some claim it was Zeus' preferred color for the palace atop Mount Olympus, while others argue it was color of the horn from which Thor drank the ocean. One thing's for certain - Lightning Blue is a color worthy of its name.", 
+  			 'price' => 500.00, 
+  			 'category' => 'color', 
+  			 'model' => 'coupe', 
+  			 'icon' => '/assets/blue-color-med.png', 
+  			 'viewFront' => '/assets/color-blue-front.png', 
+  			 'viewStripeFront' => '/assets/stripe-blue-front.png',
+   			 'viewRear' => '/assets/color-blue-rear.png', 
+  			 'viewStripeRear' => '/assets/stripe-blue-rear.png',
+  			 'borderColor' => 'blue'
+  			},
   			{
   			 'name' => 'Chili Red', 
   			 'price' => 0.00, 
@@ -132,20 +145,7 @@ class CarsController < ApplicationController
    			 'viewRear' => '/assets/color-white-rear.png', 
   			 'viewStripeRear' => '/assets/stripe-white-rear.png',
   			 'borderColor' => 'white'
-  			 },
-  			{
-  			 'name' => 'Lightning Blue',
-  			 'desc' => "METALLIC PAINT - Some claim it was Zeus' preferred color for the palace atop Mount Olympus, while others argue it was color of the horn from which Thor drank the ocean. One thing's for certain - Lightning Blue is a color worthy of its name.", 
-  			 'price' => 500.00, 
-  			 'category' => 'color', 
-  			 'model' => 'coupe', 
-  			 'icon' => '/assets/blue-color-med.png', 
-  			 'viewFront' => '/assets/color-blue-front.png', 
-  			 'viewStripeFront' => '/assets/stripe-blue-front.png',
-   			 'viewRear' => '/assets/color-blue-rear.png', 
-  			 'viewStripeRear' => '/assets/stripe-blue-rear.png',
-  			 'borderColor' => 'blue'
-  			}
+  			 }
   	]
   end
 

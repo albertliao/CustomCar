@@ -65,7 +65,7 @@ carApp.controller('OptionsListCtrl',['$scope', function($scope) {
         borderColor: $scope.colors[$scope.colorSelected].borderColor,
         background: [
                      'url('+$scope.interiors[$scope.interiorSelected].viewInt+') no-repeat',
-                     'url(/assets/interior-stick-shifter.png) no-repeat',
+                     'url(/assets/equip-stick-shifter.png) no-repeat',
                      'url(/assets/interior-radio.png) no-repeat',
                      'url(/assets/interior-black-trim-top.png) no-repeat',
                      'url(/assets/interior-black-trim.png) no-repeat',
