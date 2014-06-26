@@ -9,36 +9,8 @@
           <a href="#" onclick="buttonBack()" class="button tiny">Back</a>
           <a href="#" onclick="buttonInt()" class="button tiny">Interior</a>
         </div>
-  			<div class="slideshow-wrapper">
-  			  <div class="preloader"></div>
-  				<ul class="orbit-slider" data-options="slide_number:false;
-                                                 bullets:false;
-                                                 timer:false; 
-                                                 next_on_click:false;
-                                                 animation:fade;
-                                                 navigation_arrows:false;" data-orbit>
-  				  <li class="orbit-img-front">
-  					<%= image_tag("Blue-16inch-6-star-twin-spoke-black-front.png") %>
-  				    <div class="orbit-caption">
-  				      Exterior Front
-  				    </div>
-  				  </li>
-  				  <li class="orbit-img-back">
-  				    <%= image_tag("Backblue-16inch-6-star-twin-spoke-black-back.png") %>
-  				    <div class="orbit-caption">
-  				      Exterior Back
-  				    </div>
-  				  </li>
-  				  <li class="orbit-img-interior">
-  				    <%= image_tag("Interior-carbon.png") %>
-  				    <div class="orbit-caption">
-  				      Interior
-  				    </div>
-  				  </li>
-  				</ul>
-  			</div>
       </div> <!-- viewport -->
-
+      <br />
       <ul class="tabs" data-tab>
         <li class="tab-title active"><a href="#panel-colors">Colors</a></li>
         <li class="tab-title"><a href="#panel-wheels">Wheels</a></li>
@@ -46,14 +18,9 @@
       </ul>
       <div class="tabs-content">
         <div class="content active" id="panel-colors">
-          <div ng-click="addOption(<%=@red%>)" data-tooltip title="Blazing Red" class="has-tip tip-top color-red color-choice color-selected"></div>
+          <div back-img="/assets/red-color-med.png" ng-click="addOption(<%=@red%>)" data-tooltip title="Blazing Red" class="has-tip tip-top color-choice color-selected"></div>
           <div ng-click="addOption(<%=@white%>)" data-tooltip title="Pepper White" class="has-tip tip-top color-white color-choice"></div>
           <div ng-click="addOption(<%=@blue%>)" data-tooltip title="Deep Blue" class="has-tip tip-top color-blue color-choice"></div>
-          <form>
-            <input class="color-radio" id="red-radio" name="color-radio" value="red" type="radio" checked />
-            <input class="color-radio" id="white-radio" name="color-radio" value="white" type="radio"  />
-            <input class="color-radio" id="blue-radio" name="color-radio" value="blue" type="radio"  />
-          </form>
         </div>
         <div class="content" id="panel-wheels">
           <h1>Wheels</h1>
@@ -91,6 +58,12 @@
 
 <script>
 
+// function buildViewportFrontal(model,color,wheel) {
+//   //need to build the background css
+//   var css = "";
+//   css = css + 
+// }
+
 function buttonFront() {
   console.log("button1");
   $('.orbit-img-front').addClass("active"); 
@@ -114,21 +87,21 @@ function buttonInt() {
 
 $('.color-red').click(function() {
   $('.color-red').addClass("color-selected");
-  $('#red-radio').prop("checked", true);
+  // $('#red-radio').prop("checked", true);
   $('.color-blue').removeClass("color-selected");
   $('.color-white').removeClass("color-selected");
 });
 
 $('.color-white').click(function() {
   $('.color-red').removeClass("color-selected");
-  $('#white-radio').prop("checked", true);
+  // $('#white-radio').prop("checked", true);
   $('.color-blue').removeClass("color-selected");
   $('.color-white').addClass("color-selected");
 });
 
 $('.color-blue').click(function() {
   $('.color-red').removeClass("color-selected");
-  $('#blue-radio').prop("checked", true);
+  // $('#blue-radio').prop("checked", true);
   $('.color-blue').addClass("color-selected");
   $('.color-white').removeClass("color-selected");
 });
