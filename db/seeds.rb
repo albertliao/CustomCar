@@ -8,7 +8,6 @@
 
 Component.destroy_all
 
-#Equips
 Component.create([
   		  	{
   			 name: '6-Speed Automatic', 
