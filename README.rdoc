@@ -1,28 +1,46 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Customini is an app that seeks to emulate the car customizers you see on car company cororate sites.  I built this site to get extra pratice with using Sass/CSS, AngularJS, and the Foundation framework.
 
-Things you may want to cover:
+The app is deployed at http://customini.herokuapp.com
 
-* Ruby version
+== Features
 
-* System dependencies
+The app allows the users to:
 
-* Configuration
+* change car colors
 
-* Database creation
+* change car wheels
 
-* Database initialization
+* change the car seats
 
-* How to run the test suite
+* add or remove additional components
 
-* Services (job queues, cache servers, search engines, etc.)
+* see a running total of the cost of the car
 
-* Deployment instructions
+== Techical Details
 
-* ...
+This website is built using the following technologies and libraries:
 
+* Ruby on Rails
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* AngularJS
+
+* Sugar.js
+
+* MongoDB
+
+== Testing
+
+Testing is done with:
+
+* Rspec
+
+== Assets
+
+I attained the assets from the Mini USA website.  All rights are all theirs.
+
+== Contact
+
+Created by: Albert Liao
+Email: albertliao@gmail.com
