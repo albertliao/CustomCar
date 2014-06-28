@@ -44,5 +44,5 @@ I attained the assets from the Mini USA website.  All rights are all theirs.
 
 == Contact
 
-Created by: Albert Liao
-Email: albertliao@gmail.com
+* Created by: Albert Liao
+* Email: albertliao@gmail.com
