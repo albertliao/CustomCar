@@ -1,6 +1,6 @@
 == README
 
-Customini is an app that seeks to emulate the car customizers you see on car company cororate sites.  I built this site to get extra pratice with using Sass/CSS, AngularJS, and the Foundation framework.
+Customini is an app that seeks to emulate the car customizers you see on car company cororate sites.  I built this site to get extra pratice with using Sass/CSS, AngularJS, and the Zurb Foundation framework.
 
 The app is deployed at http://customini.herokuapp.com
 
@@ -23,6 +23,8 @@ The app allows the users to:
 This website is built using the following technologies and libraries:
 
 * Ruby on Rails
+
+* Zurb Foundation
 
 * AngularJS
 
